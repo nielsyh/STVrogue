@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GamePlay xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seed>26083189</seed>
+  <difficultyLevel>5</difficultyLevel>
+  <nodeCapcityMultiplier>5</nodeCapcityMultiplier>
+  <numberOfMonsters>20</numberOfMonsters>
+  <PlayerCommands>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>3</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>3</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>2</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>1</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>0</option>
+    </Command>
+    <Command xsi:type="MoveCommand">
+      <option>3</option>
+    </Command>
+  </PlayerCommands>
+</GamePlay>

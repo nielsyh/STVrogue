@@ -1,0 +1,185 @@
+<MutationTestingSession SessionCreationWindowShowTime="2017-05-18T13:33:56.2182007+02:00" SessionStartTime="2017-05-18T13:34:14.0257244+02:00" SessionEndTime="2017-05-18T13:41:57.8800794+02:00" SessionRunTimeSeconds="463.854355" MutationScore="91">
+  <Mutants Total="96" Live="7" MarkedAsEquivalentAmongLive="0" UnpairedFirstOrderMutants="0" Killed="88" Untested="1" WithError="1" AverageCreationTimeMiliseconds="6512.9894736842107" AverageTestingTimeMiliseconds="11930.747368421053">
+    <Assembly Name="NunitTests" />
+    <Assembly Name="STVRogue">
+      <Type Name="Bridge" Namespace="BridgeGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="JTD#34" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9051" TestingTimeMiliseconds="2767" TestingEndRelativeSeconds="23.6644646" />
+        </Method>
+        <Method Name="connectToNodeOfNextZone">
+          <Mutant Id="MCI#40" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9014" TestingTimeMiliseconds="8954" TestingEndRelativeSeconds="29.7918198" />
+        </Method>
+      </Type>
+      <Type Name="Creature" Namespace="CreatureGameLogic">
+        <Method Name="Attack">
+          <Mutant Id="OODL#185" Description="LeftOperandRemoved" State="Live" IsEquivalent="false" CreationTimeMiliseconds="8943" TestingTimeMiliseconds="10820" TestingEndRelativeSeconds="31.579590399999997" />
+        </Method>
+      </Type>
+      <Type Name="Crystal" Namespace="CrystalGameLogic">
+        <Method Name="use">
+          <Mutant Id="ISD#5" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="8922" TestingTimeMiliseconds="11147" TestingEndRelativeSeconds="31.896315599999998" />
+        </Method>
+      </Type>
+      <Type Name="Dungeon" Namespace="DungeonGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="EAM#1" Description="System.Collections.IEnumerator.get_Current" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="983" TestingTimeMiliseconds="8497" TestingEndRelativeSeconds="33.1742244" />
+          <Mutant Id="JID#2" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="947" TestingTimeMiliseconds="6538" TestingEndRelativeSeconds="37.297654699999995" />
+          <Mutant Id="MCI#2" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6035" TestingTimeMiliseconds="6598" TestingEndRelativeSeconds="44.2330847" />
+          <Mutant Id="PRV#3" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11397" TestingTimeMiliseconds="9421" TestingEndRelativeSeconds="52.748642399999994" />
+          <Mutant Id="SSDL#7" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10053" TestingTimeMiliseconds="9218" TestingEndRelativeSeconds="52.4729464" />
+          <Mutant Id="JID#8" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="5975" TestingTimeMiliseconds="3312" TestingEndRelativeSeconds="46.6002672" />
+          <Mutant Id="PRV#9" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1028" TestingTimeMiliseconds="9603" TestingEndRelativeSeconds="54.907677" />
+        </Method>
+        <Method Name="disconnect">
+          <Mutant Id="MCI#28" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1010" TestingTimeMiliseconds="9675" TestingEndRelativeSeconds="57.347411099999995" />
+          <Mutant Id="MCI#31" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="8060" TestingTimeMiliseconds="15670" TestingEndRelativeSeconds="76.222059399999992" />
+        </Method>
+        <Method Name="dungeon_is_ok">
+          <Mutant Id="SSDL#20" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10267" TestingTimeMiliseconds="15652" TestingEndRelativeSeconds="78.6923152" />
+          <Mutant Id="EAM#3" Description="get_Capacity" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="8115" TestingTimeMiliseconds="10316" TestingEndRelativeSeconds="73.357023" />
+          <Mutant Id="EAM#4" Description="get_Capacity" State="Live" IsEquivalent="false" CreationTimeMiliseconds="5718" TestingTimeMiliseconds="10350" TestingEndRelativeSeconds="73.4310757" />
+          <Mutant Id="EAM#5" Description="System.Collections.IList.get_Item" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1134" TestingTimeMiliseconds="12951" TestingEndRelativeSeconds="87.4600516" />
+        </Method>
+        <Method Name="F_Y_shuffle">
+          <Mutant Id="ROR#170" Description="False" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1121" TestingTimeMiliseconds="3132" TestingEndRelativeSeconds="77.72312629999999" />
+        </Method>
+        <Method Name="genGraph">
+          <Mutant Id="ROR#76" Description="GreaterThanOrEqual" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1095" TestingTimeMiliseconds="15652" TestingEndRelativeSeconds="92.9964868" />
+          <Mutant Id="ROR#104" Description="Equality" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="17808" TestingTimeMiliseconds="3604" TestingEndRelativeSeconds="99.1578825" />
+          <Mutant Id="ROR#109" Description="GreaterThan" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="15308" TestingTimeMiliseconds="3651" TestingEndRelativeSeconds="99.2499479" />
+          <Mutant Id="MCI#18" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="8155" TestingTimeMiliseconds="3551" TestingEndRelativeSeconds="99.194408" />
+          <Mutant Id="MCI#19" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2729" TestingTimeMiliseconds="3716" TestingEndRelativeSeconds="99.5121338" />
+          <Mutant Id="AOR#110" Description="Multiplication" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9554" TestingTimeMiliseconds="15651" TestingEndRelativeSeconds="124.4021628" />
+          <Mutant Id="PRV#21" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10516" TestingTimeMiliseconds="3334" TestingEndRelativeSeconds="113.12243629999999" />
+          <Mutant Id="AOR#123" Description="Division" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10343" TestingTimeMiliseconds="3344" TestingEndRelativeSeconds="113.08340849999999" />
+          <Mutant Id="MCI#22" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10370" TestingTimeMiliseconds="3283" TestingEndRelativeSeconds="113.1929859" />
+          <Mutant Id="OODL#44" Description="RightOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1830" TestingTimeMiliseconds="3827" TestingEndRelativeSeconds="118.7641555" />
+          <Mutant Id="AOR#216" Description="RightParam" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1800" TestingTimeMiliseconds="4248" TestingEndRelativeSeconds="119.2134743" />
+          <Mutant Id="EAM#9" Description="System.Collections.IEnumerator.get_Current" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1725" TestingTimeMiliseconds="3842" TestingEndRelativeSeconds="118.93927939999999" />
+          <Mutant Id="MCI#9" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="14816" TestingTimeMiliseconds="3413" TestingEndRelativeSeconds="137.0151277" />
+        </Method>
+        <Method Name="MonsterHP">
+          <Mutant Id="AOR#48" Description="RightParam" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="13809" TestingTimeMiliseconds="12883" TestingEndRelativeSeconds="145.692795" />
+        </Method>
+        <Method Name="shuffle_connect">
+          <Mutant Id="ROR#143" Description="LessThan" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="13607" TestingTimeMiliseconds="4255" TestingEndRelativeSeconds="137.1111955" />
+          <Mutant Id="MCI#25" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9179" TestingTimeMiliseconds="4508" TestingEndRelativeSeconds="138.1549373" />
+          <Mutant Id="AOR#245" Description="LeftParam" State="Live" IsEquivalent="false" CreationTimeMiliseconds="1575" TestingTimeMiliseconds="14559" TestingEndRelativeSeconds="153.1721111" />
+          <Mutant Id="AOR#265" Description="Subtraction" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1508" TestingTimeMiliseconds="15653" TestingEndRelativeSeconds="154.3404415" />
+          <Mutant Id="OODL#120" Description="RightOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1265" TestingTimeMiliseconds="14838" TestingEndRelativeSeconds="154.2788977" />
+          <Mutant Id="OODL#138" Description="LeftOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="14150" TestingTimeMiliseconds="15664" TestingEndRelativeSeconds="175.54601839999998" />
+        </Method>
+      </Type>
+      <Type Name="Game" Namespace="GameGameLogic">
+        <Method Name="spawnMonsters">
+          <Mutant Id="OODL#208" Description="RightOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6731" TestingTimeMiliseconds="13859" TestingEndRelativeSeconds="173.78476189999998" />
+          <Mutant Id="SSDL#160" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6519" TestingTimeMiliseconds="14206" TestingEndRelativeSeconds="175.0346549" />
+          <Mutant Id="SSDL#164" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="7746" TestingTimeMiliseconds="13295" TestingEndRelativeSeconds="175.4239352" />
+          <Mutant Id="SSDL#166" Description="" State="Error" IsEquivalent="false" CreationTimeMiliseconds="7309" TestingTimeMiliseconds="13643" TestingEndRelativeSeconds="194.7804409">
+            <ErrorInfo>
+              <Description>Error ocurred</Description>
+              <ExceptionMessage>Root element is missing.</ExceptionMessage>
+            </ErrorInfo>
+          </Mutant>
+          <Mutant Id="SSDL#167" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6071" TestingTimeMiliseconds="12152" TestingEndRelativeSeconds="193.2798743" />
+          <Mutant Id="EAM#29" Description="System.Collections.IEnumerator.get_Current" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6388" TestingTimeMiliseconds="11465" TestingEndRelativeSeconds="193.33341289999999" />
+          <Mutant Id="EAM#32" Description="System.Collections.IEnumerator.get_Current" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6498" TestingTimeMiliseconds="11451" TestingEndRelativeSeconds="193.5280507" />
+          <Mutant Id="ROR#273" Description="NotEquality" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1051" TestingTimeMiliseconds="13361" TestingEndRelativeSeconds="207.7166355" />
+          <Mutant Id="ROR#288" Description="True" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1092" TestingTimeMiliseconds="13042" TestingEndRelativeSeconds="207.4969794" />
+          <Mutant Id="ROR#298" Description="LessThanOrEqual" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1014" TestingTimeMiliseconds="13133" TestingEndRelativeSeconds="207.75216079999998" />
+          <Mutant Id="ROR#304" Description="LessThan" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11357" TestingTimeMiliseconds="13380" TestingEndRelativeSeconds="219.53853819999998" />
+          <Mutant Id="AOR#379" Description="Addition" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1197" TestingTimeMiliseconds="14500" TestingEndRelativeSeconds="223.2261603" />
+          <Mutant Id="AOR#394" Description="Modulus" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1230" TestingTimeMiliseconds="14259" TestingEndRelativeSeconds="223.2456736" />
+        </Method>
+        <Method Name="SpawnPI">
+          <Mutant Id="ROR#338" Description="False" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1166" TestingTimeMiliseconds="13959" TestingEndRelativeSeconds="222.9594702" />
+          <Mutant Id="AOR#496" Description="Modulus" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="12982" TestingTimeMiliseconds="12125" TestingEndRelativeSeconds="244.66439689999999" />
+        </Method>
+      </Type>
+      <Type Name="HealingPotion" Namespace="HealingPotionGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="JTD#15" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11240" TestingTimeMiliseconds="15693" TestingEndRelativeSeconds="249.9236478" />
+        </Method>
+        <Method Name="use">
+          <Mutant Id="ISD#1" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10918" TestingTimeMiliseconds="13890" TestingEndRelativeSeconds="248.07983679999998" />
+        </Method>
+      </Type>
+      <Type Name="Item" Namespace="ItemGameLogic">
+        <Method Name="use">
+          <Mutant Id="PRV#62" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10046" TestingTimeMiliseconds="12129" TestingEndRelativeSeconds="245.4834914" />
+          <Mutant Id="SSDL#91" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1162" TestingTimeMiliseconds="15729" TestingEndRelativeSeconds="261.58393459999996" />
+        </Method>
+      </Type>
+      <Type Name="Monster" Namespace="MonsterGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="JID#11" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1414" TestingTimeMiliseconds="14308" TestingEndRelativeSeconds="261.2301836" />
+          <Mutant Id="OODL#146" Description="LeftOperandRemoved" State="Live" IsEquivalent="false" CreationTimeMiliseconds="1349" TestingTimeMiliseconds="14518" TestingEndRelativeSeconds="263.98664279999997" />
+        </Method>
+      </Type>
+      <Type Name="Node" Namespace="NodeGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="JTD#16" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="13363" TestingTimeMiliseconds="13925" TestingEndRelativeSeconds="277.2830936" />
+          <Mutant Id="JID#17" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2243" TestingTimeMiliseconds="13553" TestingEndRelativeSeconds="277.1715142" />
+          <Mutant Id="JTD#18" Description="" State="Live" IsEquivalent="false" CreationTimeMiliseconds="2116" TestingTimeMiliseconds="12927" TestingEndRelativeSeconds="276.6956755" />
+          <Mutant Id="JID#20" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1236" TestingTimeMiliseconds="3509" TestingEndRelativeSeconds="268.78655449999997" />
+          <Mutant Id="JID#21" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="14086" TestingTimeMiliseconds="13762" TestingEndRelativeSeconds="296.6888835" />
+          <Mutant Id="JTD#21" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6275" TestingTimeMiliseconds="13880" TestingEndRelativeSeconds="296.8760165" />
+          <Mutant Id="JID#22" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="5798" TestingTimeMiliseconds="12569" TestingEndRelativeSeconds="295.5585796" />
+          <Mutant Id="PRV#66" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="5743" TestingTimeMiliseconds="14111" TestingEndRelativeSeconds="297.15621619999996" />
+          <Mutant Id="PRV#67" Description="" State="Live" IsEquivalent="false" CreationTimeMiliseconds="1181" TestingTimeMiliseconds="9757" TestingEndRelativeSeconds="306.5298787" />
+          <Mutant Id="PRV#68" Description="" State="Live" IsEquivalent="false" CreationTimeMiliseconds="6630" TestingTimeMiliseconds="14628" TestingEndRelativeSeconds="317.978516" />
+          <Mutant Id="PRV#73" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="6355" TestingTimeMiliseconds="13450" TestingEndRelativeSeconds="316.75764829999997" />
+          <Mutant Id="SSDL#100" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9054" TestingTimeMiliseconds="14045" TestingEndRelativeSeconds="320.35470499999997" />
+        </Method>
+        <Method Name="CountCreatures">
+          <Mutant Id="MCI#36" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1092" TestingTimeMiliseconds="13412" TestingEndRelativeSeconds="321.0587059" />
+        </Method>
+        <Method Name="fight">
+          <Mutant Id="AOR#320" Description="Multiplication" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1136" TestingTimeMiliseconds="13904" TestingEndRelativeSeconds="331.81820669999996" />
+          <Mutant Id="PRV#75" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1338" TestingTimeMiliseconds="13811" TestingEndRelativeSeconds="333.1541568" />
+          <Mutant Id="OODL#155" Description="RightOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="13770" TestingTimeMiliseconds="15661" TestingEndRelativeSeconds="349.8095308" />
+          <Mutant Id="OODL#166" Description="LeftOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="13027" TestingTimeMiliseconds="15700" TestingEndRelativeSeconds="349.8660705" />
+          <Mutant Id="OODL#168" Description="LeftOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2458" TestingTimeMiliseconds="15742" TestingEndRelativeSeconds="350.04669989999996" />
+        </Method>
+        <Method Name="getRandomFleeNode">
+          <Mutant Id="EAM#23" Description="get_Capacity" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1271" TestingTimeMiliseconds="15718" TestingEndRelativeSeconds="350.1642824" />
+        </Method>
+      </Type>
+      <Type Name="Pack" Namespace="PackGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="PRV#108" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10871" TestingTimeMiliseconds="15719" TestingEndRelativeSeconds="376.43347739999996" />
+          <Mutant Id="SSDL#181" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11860" TestingTimeMiliseconds="15687" TestingEndRelativeSeconds="377.5592781" />
+          <Mutant Id="SSDL#183" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10601" TestingTimeMiliseconds="15683" TestingEndRelativeSeconds="376.36692949999997" />
+          <Mutant Id="JTD#37" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11403" TestingTimeMiliseconds="15748" TestingEndRelativeSeconds="377.5077414" />
+          <Mutant Id="JID#41" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9064" TestingTimeMiliseconds="16931" TestingEndRelativeSeconds="402.67164149999996" />
+        </Method>
+        <Method Name="Attack">
+          <Mutant Id="OODL#286" Description="RightOperandRemoved" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="9065" TestingTimeMiliseconds="16781" TestingEndRelativeSeconds="402.6171002" />
+          <Mutant Id="ISD#6" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="7392" TestingTimeMiliseconds="15742" TestingEndRelativeSeconds="401.6194023" />
+        </Method>
+        <Method Name="moveTowards">
+          <Mutant Id="EAM#42" Description="System.Collections.IList.get_Item" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="11276" TestingTimeMiliseconds="19580" TestingEndRelativeSeconds="410.0098547" />
+        </Method>
+      </Type>
+      <Type Name="Player" Namespace="PlayerGameLogic">
+        <Method Name=".ctor">
+          <Mutant Id="JTD#26" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2199" TestingTimeMiliseconds="20787" TestingEndRelativeSeconds="425.6670039" />
+          <Mutant Id="JTD#27" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2218" TestingTimeMiliseconds="20687" TestingEndRelativeSeconds="425.6144665" />
+          <Mutant Id="JID#28" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2146" TestingTimeMiliseconds="20222" TestingEndRelativeSeconds="425.2116792" />
+          <Mutant Id="JTD#29" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1332" TestingTimeMiliseconds="15654" TestingEndRelativeSeconds="427.4807925" />
+          <Mutant Id="JID#30" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10743" TestingTimeMiliseconds="15742" TestingEndRelativeSeconds="452.1848242" />
+          <Mutant Id="JTD#31" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10646" TestingTimeMiliseconds="15748" TestingEndRelativeSeconds="452.07724779999995" />
+        </Method>
+        <Method Name="Attack">
+          <Mutant Id="ISD#3" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="10528" TestingTimeMiliseconds="15655" TestingEndRelativeSeconds="451.9036243" />
+          <Mutant Id="EAM#25" Description="get_Capacity" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="8875" TestingTimeMiliseconds="15704" TestingEndRelativeSeconds="452.08575279999997" />
+          <Mutant Id="ISD#4" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="2311" TestingTimeMiliseconds="9558" TestingEndRelativeSeconds="463.84233509999996" />
+        </Method>
+        <Method Name="use">
+          <Mutant Id="ISD#2" Description="" State="Killed" IsEquivalent="false" CreationTimeMiliseconds="1946" TestingTimeMiliseconds="9178" TestingEndRelativeSeconds="463.5544084" />
+        </Method>
+      </Type>
+    </Assembly>
+    <Assembly Name="STVRogue_Main" />
+  </Mutants>
+</MutationTestingSession>

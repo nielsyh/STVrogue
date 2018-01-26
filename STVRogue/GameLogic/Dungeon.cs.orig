@@ -1,0 +1,303 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using STVRogue.Utils;
+
+namespace STVRogue.GameLogic
+{
+
+    public class Dungeon
+    {
+        public List<Node> graph = new List<Node>() { };
+        public List<HealingPotion> totalPotions = new List<HealingPotion>();
+        public Node startNode;
+        public Node exitNode;
+        public uint difficultyLevel;
+        public int dungeon_size;
+        /* a constant multiplier that determines the maximum number of monster-packs per node: */
+        public uint M;
+
+        public const int max_size = 5;             /* maximale grootte voor een zone. */
+        public const int magic_shuffle_number = 5;  /*higher = more chance of higher connection avg.*/
+
+        public Bridge[] bridges;
+        int[] zone_size;
+        int[] zone_level_arr;    //array to find id of a bridge of a level, so 0 does not exist because there is no bridge to level 0.
+
+        /* To create a new dungeon with the specified difficult level and capacity multiplier */
+        public Dungeon(uint level, uint nodeCapacityMultiplier)
+        {
+            Logger.log("Creating a dungeon of difficulty level " + level + ", node capacity multiplier " + nodeCapacityMultiplier + ".");
+            M                       = nodeCapacityMultiplier;
+            difficultyLevel         = level;           
+            zone_size               = new int[difficultyLevel + 1];
+            zone_level_arr          = new int[difficultyLevel + 1];
+            bridges                 = new Bridge[difficultyLevel];
+
+            while (!dungeon_is_ok()) {
+                graph.Clear();
+                generate_random_dungeon();          //generating dungeon until it is ok.
+            }
+            
+            uint b = Predicates.countNumberOfBridges(startNode, exitNode);
+            Console.WriteLine("Total graph size: " + dungeon_size + " bridges: " + b);
+        }
+
+        //Returns false if dungeon is not ok
+        public bool dungeon_is_ok()
+        {   
+            if(graph.Count < 2) { return false; }
+            double total = 0.0;
+            double s = (double)dungeon_size;
+            for (int i = 0; i < dungeon_size; i++)
+            {
+                double n = (double) graph[i].neighbors.Count;
+                if(n > 4) {
+                    Console.WriteLine("Neighbours: " + n);
+                    return false;                   
+                }
+                total = total + n;
+            }
+            
+            double avg = total / dungeon_size;
+            if (avg > 3.000) {
+                //Console.WriteLine("Average: " + avg);
+                return false; }
+         
+            if (!Predicates.isValidDungeon(startNode,exitNode,difficultyLevel)) { return false; }
+
+            Console.WriteLine("Dungeon Ok with avg: " + avg);
+            return true;
+        }
+
+        //Generates random dungeon with level = difficultyLevel
+        void generate_random_dungeon()
+        {
+            startNode = new Node("0");
+            graph.Add(startNode);
+
+            int cnt             = 0;                                 //counter of builded nodes. After loop equal to dungeon size.
+            Bridge last_bridge  = new Bridge("no id") { };           //don't know random size yet.
+            Random r            = new Random();
+
+            for (int i = 0; i < (difficultyLevel + 1); i++)
+            {
+                int random_size = r.Next(2, max_size);              //Hoe groot wordt de zone? min must be 2.
+                zone_size[i] = random_size;                         //Willen we later vast ook nog weten..
+                Node[] node_arr = new Node[random_size];            //Node array met nodes van deze zone.
+
+                for (int j = 0; j < random_size - 1; j++)
+                {
+                    Node tmp_node = new Node("" + (j + cnt + 1));   //+1 because node 0 is taken by startnode
+                    tmp_node.nodeLevel = (uint)(i + 1);             //start at lvl 1
+                    graph.Add(tmp_node);
+                    node_arr[j + 1] = tmp_node;
+                }
+                if (i == 0) //first iteration
+                {
+                    node_arr[0] = startNode;
+                    last_bridge = new Bridge("" + (cnt + random_size - 1));
+                    graph.Add(last_bridge);
+                    bridges[i]  = last_bridge;
+                    zone_level_arr[1]  = int.Parse(last_bridge.id);  //add bridge to level/zone 1
+                    last_bridge.nodeLevel = (uint) 1;
+                    node_arr[random_size - 1] = last_bridge;
+                }
+                else if (i < difficultyLevel) //not first/last iteration 
+                { 
+                    node_arr[0] = last_bridge;
+                    last_bridge = new Bridge("" + (cnt + random_size - 1));
+                    graph.Add(last_bridge);
+                    bridges[i] = last_bridge;
+                    zone_level_arr[i + 1] = int.Parse(last_bridge.id);  //add bridge to level/zone i + 1
+                    last_bridge.nodeLevel = (uint) (i + 1);
+                    node_arr[random_size - 1] = last_bridge;
+                }
+                else if (i == difficultyLevel) //last iteration
+                {
+                    node_arr[0] = last_bridge;
+                    exitNode = new Node("" + (cnt + random_size - 1));
+                    graph.Add(exitNode);
+                    node_arr[random_size - 1] = exitNode; // end node
+                }
+                for (int k = 0; k < magic_shuffle_number; k++)
+                {   
+                    F_Y_shuffle(node_arr);      //Fisher-Yates Shuffle
+                    for (int j = 0; j < random_size - 1; j++)
+                    {
+                        if(node_arr[j].neighbors.Count > 3 || node_arr[j + 1].neighbors.Count > 3)
+                        {
+                            continue;       //skip more neighbours are not allowed
+                        }
+                        //Logger.log("Connect " + node_arr[j].id + " to " + node_arr[j + 1].id);
+                        node_arr[j].connect(node_arr[j + 1]);
+                    }
+                }
+                //Logger.log("Zone: " + i + " size: " + random_size);
+                cnt = cnt + random_size;
+            }
+            dungeon_size = cnt;
+
+            //this is necessary for "from" and "to" nodes.
+            for (int i = 0; i < difficultyLevel; i++)
+            {
+                int options         = bridges[i].neighbors.Count;
+                uint current_level  = bridges[i].nodeLevel;
+
+                for (int j = 0; j < options; j++)
+                {
+                    if(bridges[i].neighbors[j].nodeLevel == current_level)
+                    {
+                        bridges[i].connectToNodeOfSameZone(bridges[i].neighbors[j]);
+                    }
+                    else if(bridges[i].neighbors[j].nodeLevel > current_level)
+                    {
+                        bridges[i].connectToNodeOfNextZone(bridges[i].neighbors[j]);
+                    }
+                }
+            }
+<<<<<<< HEAD
+           
+=======
+            Console.WriteLine("Total graph size: " + cnt);
+            
+            //track alle potions aanwezig in de dungeon incl player (player heeft bij initialization 0 potions dus deze case heeft ze allemaal)
+            foreach(Node node in graph)
+            {
+                foreach(HealingPotion potion in node.items)
+                {
+                    totalPotions.Add(potion);
+                }
+
+            }
+>>>>>>> items
+        }
+
+        public void F_Y_shuffle(object[] objects)
+        {
+            Random r = new Random();
+            for (int i = objects.Length - 1; i > 0; i--)
+            {
+                int j       = r.Next(i + 1);
+                object tmp  = objects[i];
+                objects[i]  = objects[j];
+                objects[j]  = tmp;
+            }
+        }
+
+        
+
+
+
+        /* To disconnect a bridge from the rest of the zone the bridge is in. */
+        public void disconnect(Bridge b)
+        {
+            //MOET DE NODE OOK UIT GRAPH GEHAALD WORDE?
+            Logger.log("Disconnecting the bridge " + b.id + " from its zone.");
+            
+            Node newStart = new Node(b.id);
+            newStart.neighbors = b.neighbors;
+            newStart.nodeLevel = b.nodeLevel;
+
+            for (int i = 0; i < b.neighbors.Count(); i++)
+            {
+
+                if (b.neighbors[i].nodeLevel <= b.nodeLevel)
+                {
+                    b.disconnect(b.neighbors[i]);
+                }
+                else
+                {
+                    b.neighbors[i] = newStart;
+                    newStart.neighbors.Add(b.neighbors[i]);
+                }
+            }
+
+            startNode = newStart;
+        }
+
+        /* To calculate the level of the given node. */
+        /* Level wordt maar 1x berekend dus vraagt alleen level op^ */
+
+        public uint level(Node d) { return d.nodeLevel; }
+    }
+
+    public class Node
+    {
+        public String id;
+        public List<Node> neighbors = new List<Node>();
+        public List<Pack> packs = new List<Pack>();
+        public List<Item> items = new List<Item>();
+        private uint node_level;
+        private Boolean contested = false; //contested / in combat
+
+        public Node() { }
+        public Node(String id) { this.id = id; }
+
+        //spawn items and monsters / packs
+        public int CountCreatures()
+        {
+            int counter = 0;
+            foreach (Pack p in packs)
+                counter += p.members.Count;
+            return counter;
+        }
+        /* To connect this node to another node. */
+        public void connect(Node nd)
+        {
+            if (!neighbors.Contains(nd))
+            {
+                neighbors.Add(nd); nd.neighbors.Add(this);
+            }
+
+        }
+
+        /* To disconnect this node from the given node. */
+        public void disconnect(Node nd)
+        {
+            neighbors.Remove(nd); nd.neighbors.Remove(this);
+        }
+
+
+        /* Execute a fight between the player and the packs in this node.
+         * Such a fight can take multiple rounds as describe in the Project Document.
+         * A fight terminates when either the node has no more monster-pack, or when
+         * the player's HP is reduced to 0. 
+         */
+        public void fight(Player player)
+        {
+            throw new NotImplementedException();
+        }
+
+        public uint nodeLevel {
+            get { return node_level; }
+            set { node_level = value; }
+           
+        }
+    }
+
+    public class Bridge : Node
+    {
+        List<Node> fromNodes = new List<Node>();
+        List<Node> toNodes = new List<Node>();
+        public Bridge(String id) : base(id) { }
+
+        /* Use this to connect the bridge to a node from the same zone. */
+        public void connectToNodeOfSameZone(Node nd)
+        {
+            base.connect(nd);
+            fromNodes.Add(nd);
+        }
+
+        /* Use this to connect the bridge to a node from the next zone. */
+        public void connectToNodeOfNextZone(Node nd)
+        {
+            base.connect(nd);
+            toNodes.Add(nd);
+        }
+
+    }
+
+}
